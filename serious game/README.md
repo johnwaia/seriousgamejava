@@ -51,9 +51,10 @@ Represents a player in the quiz game, storing information such as username, pass
 ### GestionBaseDeDonnees.java
 Handles database operations for storing/retrieving player information, quiz questions, and challenge records.
 
-#### Database
+### Database Structure
 
--- Création de la table 'defi'
+#### Création de la table 'defi'
+```sql
 CREATE TABLE defi (
     id_defi INT AUTO_INCREMENT PRIMARY KEY,
     id_emetteur INT,
@@ -63,8 +64,9 @@ CREATE TABLE defi (
     niveau VARCHAR(255),
     accepte TINYINT
 );
-
--- Création de la table 'defi_questions'
+```
+#### Création de la table 'defi_questions'
+```sql
 CREATE TABLE defi_questions (
     id_defi INT,
     id_question INT,
@@ -72,8 +74,9 @@ CREATE TABLE defi_questions (
     FOREIGN KEY (id_defi) REFERENCES defi(id_defi),
     FOREIGN KEY (id_question) REFERENCES questions(id)
 );
-
--- Création de la table 'joueurs'
+```
+#### Création de la table 'joueurs'
+```sql
 CREATE TABLE joueurs (
     id_joueur INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(255),
@@ -83,8 +86,9 @@ CREATE TABLE joueurs (
     note_java INT,
     mot_de_passe VARCHAR(64)
 );
-
--- Création de la table 'joueur_question'
+```
+#### Création de la table 'joueur_question'
+```sql
 CREATE TABLE joueur_question (
     id INT AUTO_INCREMENT PRIMARY KEY,
     joueur_id INT,
@@ -92,8 +96,9 @@ CREATE TABLE joueur_question (
     FOREIGN KEY (joueur_id) REFERENCES joueurs(id_joueur),
     FOREIGN KEY (question_id) REFERENCES questions(id)
 );
-
--- Création de la table 'questions'
+```
+#### Création de la table 'questions'
+```sql
 CREATE TABLE questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     texte TEXT,
@@ -104,6 +109,7 @@ CREATE TABLE questions (
     matiere VARCHAR(60),
     niveau VARCHAR(25)
 );
+```
 
 ### Question.java
 Represents a quiz question with an ID, text, options, correct answer, and difficulty level (easy, medium, difficult).

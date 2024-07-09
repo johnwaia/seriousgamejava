@@ -1,7 +1,3 @@
-Voici le README complété pour votre application de quiz, en intégrant les classes et fonctionnalités que vous avez développées :
-
----
-
 # Quiz Game Application
 
 ## Description
@@ -55,7 +51,7 @@ Represents a player in the quiz game, storing information such as username, pass
 ### GestionBaseDeDonnees.java
 Handles database operations for storing/retrieving player information, quiz questions, and challenge records.
 
-## Database
+#### Database
 
 -- Création de la table 'defi'
 CREATE TABLE defi (
